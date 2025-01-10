@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -8,13 +9,19 @@ import java.util.List;
  * @apiNote 15. 三数之和
  */
 public class _006_threeSum {
+
+    /**
+     * 三指针
+     * @param nums
+     * @return
+     */
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         // 先排序
         Arrays.sort(nums);
-        // 排序后数组的第一个值如果大于0，则三数之和后一定不可能有等于0的情况，直接返回「校验一些特殊情况」
+        // 排序后数组的第一个值如果大于0，则三数之和后一定不可能有等于0的情况，直接返回
         if (nums[0] > 0) {
-            return res;
+            return res; // TODO error
         }
     /*
         使用i指针固定一个值a,使用left指针固定一个值b，使用right指针固定一个值c
@@ -23,7 +30,7 @@ public class _006_threeSum {
         for (int i = 0; i < nums.length - 2; i++) {
             // 对a进行去重
             if (i > 0 && nums[i] == nums[i - 1]) {
-                continue;
+                continue; // TODO error
             }
             int right = nums.length - 1;
             int left = i + 1;
@@ -47,5 +54,75 @@ public class _006_threeSum {
             }
         }
         return res;
+    }
+
+    public List<List<Integer>> threeSum2(int[] nums) {
+        List<List<Integer>> result = new LinkedList<>();
+        Arrays.sort(nums); // 排序
+        dfs(3, 0, nums.length - 1, nums, 0, new LinkedList<>(), result);
+        return result;
+    }
+
+    /**
+     *
+     * @param n 三数之和 n == 3  四数之和 n == 4
+     * @param i 左边界
+     * @param j 右边界
+     * @param nums 数组
+     * @param target 目标值
+     * @param stack 栈 回溯用
+     * @param result 结果集合 -> 存放最后的结果
+     */
+    public void dfs(int n, int i, int j, int[] nums, int target,
+                    LinkedList<Integer> stack, List<List<Integer>> result) {
+        if (n == 2) {
+            // 如果n==2,走求解两数之和的逻辑
+            towSum(nums, i, j, target, stack, result);
+            return;
+        }
+        for (int k = i; k < j - (n - 2); k++) {
+            if (k > i && nums[k] == nums[k - 1]) { // 去重
+                continue;
+            }
+            int num = nums[k];
+            stack.push(num); // 固定一个值
+            dfs(n - 1, k + 1, j, nums, target - num, stack, result);
+            stack.pop();
+        }
+    }
+
+    /**
+     * 两数之和
+     * @param nums
+     * @param i
+     * @param j
+     * @param target
+     * @param stack
+     * @param result
+     */
+    private void towSum(int[] nums, int i, int j, int target,
+                        LinkedList<Integer> stack, List<List<Integer>> result) {
+
+        while (i < j) {
+            int sum = nums[i] + nums[j];
+            if (sum < target) {
+                i++;
+            } else if (sum > target) {
+                j--;
+            } else {
+                ArrayList<Integer> list = new ArrayList<>(stack);
+                list.add(nums[i]);
+                list.add(nums[j]);
+                result.add(list);
+                while (i < j && nums[i] == nums[i - 1]) { // 去重
+                    i++;
+                }
+                while (i < j && nums[j] == nums[j + 1]) { // 去重
+                    j--;
+                }
+                i++;
+                j--;
+            }
+        }
     }
 }
