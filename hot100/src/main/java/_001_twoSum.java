@@ -11,7 +11,7 @@ public class _001_twoSum {
         // 「key:数组元素  value：元素对应数组下标」
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-                int num = nums[i];
+            int num = nums[i];
             if (map.containsKey(target - num)) {
                 // 如果map中存了和当前元素配对的元素，直接取下标返回
                 return new int[]{i, map.get(target - num)};
