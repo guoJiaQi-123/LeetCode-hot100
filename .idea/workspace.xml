@@ -60,10 +60,12 @@
     "vue.rearranger.settings.migration": "true",
     "应用程序._003_longestConsecutive.executor": "Run",
     "应用程序._004_moveZeroes.executor": "Run",
+    "应用程序._016_productExceptSelf.executor": "Debug",
+    "应用程序._017_firstMissingPositive.executor": "Run",
     "应用程序._2_groupAnagrams.executor": "Run"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="应用程序._017_firstMissingPositive">
     <configuration name="_004_moveZeroes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="_004_moveZeroes" />
       <module name="hot100" />
@@ -71,8 +73,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="_016_productExceptSelf" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_016_productExceptSelf" />
+      <module name="hot100" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="_017_firstMissingPositive" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_017_firstMissingPositive" />
+      <module name="hot100" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序._017_firstMissingPositive" />
+        <item itemvalue="应用程序._016_productExceptSelf" />
         <item itemvalue="应用程序._004_moveZeroes" />
       </list>
     </recent_temporary>
@@ -88,6 +106,7 @@
       <workItem from="1736082999253" duration="2051000" />
       <workItem from="1736160943157" duration="4537000" />
       <workItem from="1736390119474" duration="1548000" />
+      <workItem from="1740140623046" duration="5468000" />
     </task>
     <task id="LOCAL-00001" summary="128. 最长连续序列">
       <option name="closed" value="true" />
