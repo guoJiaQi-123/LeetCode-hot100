@@ -5,7 +5,7 @@ import publicclass.ListNode;
  * @author OldGj 2025/2/25
  * @apiNote 160. 相交链表
  */
-public class _020_getIntersectionNode {
+public class _022_getIntersectionNode {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         // 记录两个链表的头节点
         ListNode oldHeadA = headA;

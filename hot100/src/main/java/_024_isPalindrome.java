@@ -5,7 +5,7 @@ import publicclass.ListNode;
  * @author OldGj 2025/2/26
  * @apiNote 234. 回文链表
  */
-public class _022_isPalindrome {
+public class _024_isPalindrome {
     public boolean isPalindrome(ListNode head) {
         // 获取中间节点
         ListNode middle = this.middle(head);

@@ -5,7 +5,7 @@ import publicclass.ListNode;
  * @author OldGj 2025/2/26
  * @apiNote 141. 环形链表
  */
-public class _023_hasCycle {
+public class _025_hasCycle {
     public boolean hasCycle(ListNode head) {
         ListNode slow = head; // 慢指针
         ListNode fast = head; // 快指针

@@ -5,7 +5,7 @@ import publicclass.ListNode;
  * @author OldGj 2025/2/26
  * @apiNote 206. 反转链表
  */
-public class _021_reverseList {
+public class _023_reverseList {
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode current = head;
