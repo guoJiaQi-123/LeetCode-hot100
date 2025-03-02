@@ -7,12 +7,11 @@ import java.util.List;
  * @apiNote 54. 螺旋矩阵
  */
 public class _019_spiralOrder {
-
     /*
-        1   2   3
-        8   9   4
-        7   6   5
-     */
+          1   2   3
+          8   9   4
+          7   6   5
+       */
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> res = new ArrayList<>();
         if (matrix == null) {
