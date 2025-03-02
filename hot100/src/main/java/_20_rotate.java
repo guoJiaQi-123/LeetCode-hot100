@@ -6,7 +6,7 @@
 public class _20_rotate {
     public void rotate(int[][] matrix) {
         int n = matrix.length;
-        // 水平翻转,列不变
+        // 水平上下翻转,列不变
         for (int i = 0; i < n / 2; i++) {
             for (int j = 0; j < n; j++) {
                 int temp = matrix[i][j];
@@ -22,5 +22,14 @@ public class _20_rotate {
                 matrix[j][i] = temp;
             }
         }
+    }
+
+    public static void main(String[] args) {
+        int[][] ints = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+        new _20_rotate().rotate(ints);
     }
 }
